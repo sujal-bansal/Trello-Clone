@@ -1,3 +1,6 @@
+"use client";
+
+import Navbar from "@/components/navbar";
 import { Button } from "@/components/ui/button";
 import { useBoards } from "@/lib/hooks/useBoards";
 import { useUser } from "@clerk/nextjs";
@@ -8,10 +11,11 @@ export default function DashboardPage() {
   const { createBoard } = useBoards();
 
   const handleCreateBoard = async () => {
-    await createBoard();
+    await createBoard({ title: "New Board" });
   };
   return (
     <div className="min-h-screen bg-gray-50">
+      <Navbar />
       <main className="container mx-auto px-4 py-6 sm:py-8">
         <div className="mb-6 sm:mb-8">
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
