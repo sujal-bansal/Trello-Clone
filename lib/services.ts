@@ -75,6 +75,7 @@ export const boardDataService = {
         columnService.createColumns(supabase, {
           ...column,
           board_id: board.id,
+          user_id: boardData.userId,
         })
       )
     );
